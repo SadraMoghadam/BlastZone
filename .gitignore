@@ -72,3 +72,80 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+
+# Ignore binary and build files
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.VC.db
+*.VC.opendb
+
+# Ignore user-specific files
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.userprefs
+*.log
+*.tlog
+*.pdb
+*.idb
+*.ipch
+*.tmp
+*.cache
+*.obj
+
+# Ignore compiled binaries
+*.dll
+*.exe
+*.lib
+*.app
+*.dylib
+*.so
+
+# Ignore Unreal auto-generated files
+*.generated.*
+*.generated.cpp
+*.generated.h
+
+# Ignore macOS and Linux system files
+.DS_Store
+.AppleDouble
+.LSOverride
+ehthumbs.db
+Icon?
+Thumbs.db
+desktop.ini
+
+# Ignore packaged builds
+Packaged/
+
+# Ignore backup files
+*.bak
+*.old
+*.orig
+*.swp
+
+# Ignore config backups
+*.ini~
+
+# Ignore any local plugins if needed
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# Optional: Ignore specific large asset types (if using Git LFS or keeping repo lean)
+# Uncomment if needed
+# *.uasset
+# *.umap
+
+# Optional: If using Rider or Visual Studio Code
+.idea/
+.vscode/
+
+# Ignore Crash Reports
+CrashReportClient/Saved/
+Content/StarterContent/
+Content/Characters/Mannequins/
