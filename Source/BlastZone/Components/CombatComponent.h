@@ -39,6 +39,11 @@ private:
 	UPROPERTY(Replicated)
 	bool bIsAiming;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float BaseWalkSpeed = 600.f;
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float AimWalkSpeed = 450.f;
+
 public:	
 
 		
