@@ -20,6 +20,7 @@ void UCombatComponent::BeginPlay()
 	{
 		Character->GetCharacterMovement()->MaxWalkSpeed = BaseWalkSpeed;
 	}
+	SetIsReplicated(true);
 }
 
 void UCombatComponent::SetAiming(bool bShouldAim)
