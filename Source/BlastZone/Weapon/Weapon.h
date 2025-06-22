@@ -25,6 +25,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	void ShowPickupWidget(bool bShowWidget);
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	void Fire();
 
 protected:
 	virtual void BeginPlay() override;
@@ -61,6 +62,9 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Weapon")
 	class UWidgetComponent* PickupWidget;
+
+	UPROPERTY(EditAnywhere, Category = "Weapon")
+	class UAnimationAsset* FireAnimation;
 
 public:	
 	void SetWeaponState(EWeaponState State);
