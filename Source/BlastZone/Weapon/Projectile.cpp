@@ -4,9 +4,14 @@
 #include "Projectile.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystemComponent.h"
+#include "Particles/ParticleSystem.h"
 
 AProjectile::AProjectile()
 {
+	bReplicates = true;
+
 	PrimaryActorTick.bCanEverTick = true;
 	CollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("CollisionBox"));
 	SetRootComponent(CollisionBox);
@@ -18,7 +23,6 @@ AProjectile::AProjectile()
 
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 	ProjectileMovementComponent->bRotationFollowsVelocity = true;
-
 	ProjectileMovementComponent->SetUpdatedComponent(CollisionBox);
 }
 
@@ -26,6 +30,17 @@ void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	if (TrailEffect)
+	{
+		TrailComponent = UGameplayStatics::SpawnEmitterAttached(
+			TrailEffect,
+			CollisionBox,
+			FName(),
+			GetActorLocation(),
+			GetActorRotation(),
+			EAttachLocation::KeepWorldPosition
+		);
+	}
 }
 
 void AProjectile::Tick(float DeltaTime)

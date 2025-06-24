@@ -25,6 +25,12 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	class UProjectileMovementComponent* ProjectileMovementComponent;
 
+	UPROPERTY(EditAnywhere)
+	class UParticleSystem* TrailEffect;
+
+	UPROPERTY(EditAnywhere)
+	class UParticleSystemComponent* TrailComponent;
+
 public:	
 
 };
