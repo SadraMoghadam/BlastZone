@@ -99,11 +99,11 @@ void UCombatComponent::TraceUnderCrosshair(FHitResult& TraceHitResult)
 			End,
 			ECC_Visibility
 		);
-		//if (!TraceHitResult.bBlockingHit)
-		//{
-		//	TraceHitResult.ImpactPoint = End;
-		//	//HitTarget = End;
-		//}
+		if (!TraceHitResult.bBlockingHit)
+		{
+			TraceHitResult.ImpactPoint = End;
+			//HitTarget = End;
+		}
 		//else
 		//{
 		//	//HitTarget = TraceHitResult.ImpactPoint;
